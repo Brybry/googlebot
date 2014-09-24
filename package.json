@@ -1,6 +1,6 @@
 {
   "name": "googlebot",
-  "version": "0.1.41",
+  "version": "0.1.42",
   "description": "Express middleware that returns the resulting html after executing javascript, allowing crawlers to read on the page",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,6 @@
     "url": "https://github.com/dvidsilva/googlebot/issues"
   },
   "dependencies": {
-    "node-phantom": "0.2.5"
+    "node-phantom": "leobispo/node-phantom#0bda77a51ec6b1c0577eefad42640240c54b5064"
   }
 }
