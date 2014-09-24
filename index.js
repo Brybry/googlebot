@@ -13,6 +13,7 @@ exports = module.exports = function(options) {
   options.evaluate = options.evaluate || function(){};
   options.restrictGet = options.restrictGet || true;
   options.delimiter = options.delimiter || '';
+  options.hashbang = options.hashbang || false;
   function testUrl(req) {
     // #IMPROVE allow for the trigger to be an array of triggers instead of a string
     var urlParts = req.url.split(options.trigger);
@@ -35,7 +36,9 @@ exports = module.exports = function(options) {
       fragment : urlParts[1],
       append : options.append
     };
-
+	
+	if (options.hashbang)
+		url.path += '#!';
     /* The hash fragment is for those pages that store their state in it
      * if (url.fragment.length === 0) {
     // We are dealing with crawlable an ajax page without a hash fragment
@@ -103,7 +106,7 @@ exports = module.exports = function(options) {
       res.send(snapshot);
       res.end();
     });
-  }
-}
+  };
+};
 
 
